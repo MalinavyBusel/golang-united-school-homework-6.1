@@ -87,7 +87,7 @@ func (b *box) RemoveAllCircles() error {
 	var err error = nil
 	for index, shape := range b.shapes {
 		if reflect.TypeOf(shape) == reflect.TypeOf(Circle{}) {
-			circle, _ := b.ExtractByIndex(index)
+			b.ExtractByIndex(index)
 			err = fmt.Errorf("error: %w", errors.New("the box has no circles in it"))
 		}
 	}
